@@ -1,0 +1,135 @@
+{
+  "server": {
+    "name": "ZER0DTE",
+    "transport": "http",
+    "endpoint": "https://mcp.zer0dte.trade/mcp",
+    "protocol": "MCP (Model Context Protocol)"
+  },
+  "tools": [
+    {
+      "name": "zer0dte_snapshot",
+      "description": "Full 0DTE situational awareness in one call. Returns regime classification, key levels, expected move, volatility context, exposure totals, and flow summary.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" }
+      }
+    },
+    {
+      "name": "zer0dte_levels",
+      "description": "Key price levels from options positioning. Gamma flip point, call wall, put wall, max pain, highest OI strike, top 5 GEX strikes.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" }
+      }
+    },
+    {
+      "name": "zer0dte_exposure",
+      "description": "GEX/DEX/VEX/CHEX exposure by strike. Shows where dealer hedging activity is concentrated.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" },
+        "strike_range": { "type": "integer", "default": 20, "description": "Strikes above and below ATM" },
+        "exposure_type": { "type": "string", "default": "all", "enum": ["gex", "dex", "vex", "chex", "all"], "description": "Exposure type to return" }
+      }
+    },
+    {
+      "name": "zer0dte_chain",
+      "description": "Smart-filtered 0DTE options chain with Greeks. Returns only the relevant ATM slice.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" },
+        "strike_range": { "type": "integer", "default": 10, "description": "Strikes above and below ATM" },
+        "option_type": { "type": "string", "default": "both", "enum": ["call", "put", "both"], "description": "Option type filter" },
+        "min_volume": { "type": "integer", "default": 0, "description": "Minimum volume filter" },
+        "min_oi": { "type": "integer", "default": 0, "description": "Minimum open interest filter" }
+      }
+    },
+    {
+      "name": "zer0dte_regime",
+      "description": "GEX regime classification. Positive or negative gamma, dealer behavior, historical context, confidence level.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" }
+      }
+    },
+    {
+      "name": "zer0dte_expected_move",
+      "description": "Expected price range from IV and ATM straddle price. Full-day and remaining move.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" }
+      }
+    },
+    {
+      "name": "zer0dte_flows",
+      "description": "Aggregated vanna and charm exposure with drift direction. Second-order Greeks that create systematic pressure.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" }
+      }
+    },
+    {
+      "name": "zer0dte_accuracy",
+      "description": "Historical accuracy of computed levels. How often gamma flip, call wall, put wall, and expected move held.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" },
+        "lookback_days": { "type": "integer", "default": 30, "description": "Days to analyze" }
+      }
+    },
+    {
+      "name": "zer0dte_history",
+      "description": "All regime snapshots for a specific date. How levels, regime, and price evolved throughout the session.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" },
+        "date": { "type": "string", "default": "today", "description": "Date in YYYY-MM-DD format" }
+      }
+    },
+    {
+      "name": "zer0dte_compare",
+      "description": "Find past sessions most similar to today by regime, GEX magnitude, and IV level.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" },
+        "top_n": { "type": "integer", "default": 5, "description": "Number of similar sessions" }
+      }
+    },
+    {
+      "name": "zer0dte_calendar",
+      "description": "Economic calendar check. FOMC/CPI/NFP events, early close status, blackout windows.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" },
+        "check_date": { "type": "string", "default": "today", "description": "Date in YYYY-MM-DD format" }
+      }
+    },
+    {
+      "name": "zer0dte_opening_range",
+      "description": "Opening range: first 60-minute high/low and breakout status.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" }
+      }
+    },
+    {
+      "name": "zer0dte_strikes",
+      "description": "Delta-targeted strike analysis for common 0DTE structures (iron condors, credit spreads).",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" },
+        "strategy": { "type": "string", "default": "iron_condor", "enum": ["iron_condor", "put_spread", "call_spread"], "description": "Strategy type" },
+        "target_delta": { "type": "number", "default": 0.10, "description": "Target delta for short strikes" }
+      }
+    },
+    {
+      "name": "zer0dte_liquidity",
+      "description": "Liquidity assessment: bid-ask spread, volume, fill probability.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" },
+        "strikes": { "type": "array", "items": "number", "default": "near ATM", "description": "Specific strikes to check" }
+      }
+    },
+    {
+      "name": "zer0dte_pulse",
+      "description": "Lightweight monitoring. Price vs levels, regime status, risk level.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" }
+      }
+    },
+    {
+      "name": "zer0dte_alert",
+      "description": "Monitors regime flips, level breaks, VIX spikes, proximity to key levels. Severity-graded alerts.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" }
+      }
+    }
+  ]
+}
