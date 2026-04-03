@@ -1,5 +1,7 @@
 # ZER0DTE
 
+![Beta](https://img.shields.io/badge/status-beta-blue) ![MCP](https://img.shields.io/badge/protocol-MCP-green) ![Tools](https://img.shields.io/badge/tools-16-orange) ![License](https://img.shields.io/badge/data-free_tier-brightgreen)
+
 **Real-time options intelligence for AI agents.**
 
 16 MCP tools that give your AI assistant live 0DTE options data: dealer exposure, key levels, regime classification, expected moves, and smart-filtered chains.
