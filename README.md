@@ -333,10 +333,12 @@ Monitors for significant changes: regime flips, level breaks, VIX spikes, proxim
 
 | Plan | Limit | Price |
 |------|-------|-------|
-| **Free** | 10 calls/day, 50/week | $0 |
-| **Pro** | Unlimited | Coming soon |
+| **Free** | 10 calls/day, 50/week | $0 — no registration |
+| **Pro** | Unlimited | Coming soon — API key based |
 
-Free tier requires no registration. Just add the URL and go.
+The free tier is live now. No API key, no signup. Just add the URL.
+
+Pro tier with unlimited access via API key is in development. Join the waitlist at [zer0dte.trade](https://zer0dte.trade) to get notified.
 
 ---
 
