@@ -48,6 +48,20 @@ URL: https://mcp.zer0dte.trade/sse
 Header: Authorization: Bearer free-tier
 ```
 
+### First question to ask
+
+Once connected, type this to your AI:
+
+> **What's the 0DTE setup on SPX right now?**
+
+This calls `zer0dte_snapshot` and returns regime, key levels, expected move,
+VIX, and flows in one response. From there, drill into any dimension:
+
+- *"Where are the call and put walls?"* → `zer0dte_levels`
+- *"Has this regime happened before? What followed?"* → `zer0dte_pattern`
+- *"Show me the chain at 25-delta for an iron condor"* → `zer0dte_strikes`
+- *"Should I enter now?"* → `zer0dte_entry_score` (0-100 research-backed)
+
 ---
 
 ## Tools
