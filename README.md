@@ -65,16 +65,30 @@ move, VIX, and flows in one response. From there, drill into any dimension:
 - *"Where are the call and put walls?"* → `zer0dte_levels`
 - *"Show me GEX distribution by strike"* → `zer0dte_exposure`
 - *"What regime are we in?"* → `zer0dte_regime`
+- *"What are vanna and charm flows doing right now?"* → `zer0dte_flows`
+- *"How much of the expected move has been consumed?"* → `zer0dte_expected_move`
+- *"Has anything flipped or broken since my last check?"* → `zer0dte_alert`
+
+**Options data**
+- *"Show me the 0DTE chain around ATM"* → `zer0dte_chain`
+- *"How tight are spreads on the 5300 put?"* → `zer0dte_liquidity`
 
 **Historical intelligence**
 - *"When did the regime last flip?"* → `zer0dte_regime_history`
 - *"What happened the last time we were in positive gamma?"* → `zer0dte_pattern`
 - *"Find sessions similar to today"* → `zer0dte_compare`
+- *"How did levels and regime evolve last Friday?"* → `zer0dte_history`
+- *"How often does the call wall actually hold?"* → `zer0dte_accuracy`
+- *"Did we break out of the opening range?"* → `zer0dte_opening_range`
 
 **Trade setup**
 - *"Suggest 10-delta strikes for an iron condor"* → `zer0dte_strikes`
 - *"Should I enter now?"* → `zer0dte_entry_score`
 - *"Is there a FOMC event today?"* → `zer0dte_calendar`
+
+**Monitoring & pre-market**
+- *"Quick update — where's price vs key levels?"* → `zer0dte_pulse`
+- *"What happened overnight? Futures, VIX, gap?"* → `zer0dte_overnight`
 
 All 20 tools documented below.
 
