@@ -135,6 +135,7 @@ All 21 tools documented below.
 | [`zer0dte_opening_range`](#zer0dte_opening_range) | Opening range and breakout status |
 | [`zer0dte_regime_history`](#zer0dte_regime_history) | Regime transition history with context |
 | [`zer0dte_pattern`](#zer0dte_pattern) | Pattern matching: similar past setups and outcomes |
+| [`zer0dte_session_log`](#zer0dte_session_log) | Today's reasoning log: regime flips, wall breaks, entry scores |
 
 ---
 
@@ -394,6 +395,19 @@ Pre-market context: overnight futures (ES, NQ, RTY), VIX/VIX1D/VVIX, gap analysi
 | `symbol` | string | `SPX` | Underlying symbol |
 
 **Returns:** futures prices and changes, VIX complex, gap size and direction, risk sentiment assessment.
+
+---
+
+### `zer0dte_session_log`
+
+Today's reasoning log: regime flips, wall breaks, entry score transitions, and confidence shifts captured throughout the trading session. Useful for end-of-day review or post-mortem on a specific date.
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `symbol` | string | `SPX` | Underlying symbol |
+| `date` | string | today | Date in `YYYY-MM-DD` format |
+
+**Returns:** chronological event log with timestamps, event types (regime_flip, wall_break, score_change, alert), and contextual details (from/to values, GEX magnitude, price).
 
 ---
 
