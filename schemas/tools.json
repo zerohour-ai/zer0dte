@@ -155,6 +155,21 @@
         "near_level": { "type": "string", "enum": ["put_wall", "call_wall", "gamma_flip"], "description": "Filter by proximity to level type" },
         "lookback_days": { "type": "integer", "default": 90, "description": "How many days back to search" }
       }
+    },
+    {
+      "name": "zer0dte_overnight",
+      "description": "Pre-market context: overnight futures (ES, NQ, RTY), VIX/VIX1D/VVIX, gap analysis, risk sentiment.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" }
+      }
+    },
+    {
+      "name": "zer0dte_session_log",
+      "description": "Today's reasoning log: regime flips, wall breaks, entry scores, confidence transitions for the active or specified date.",
+      "parameters": {
+        "symbol": { "type": "string", "default": "SPX", "description": "Underlying symbol" },
+        "date": { "type": "string", "default": "today", "description": "Date in YYYY-MM-DD format" }
+      }
     }
   ]
 }

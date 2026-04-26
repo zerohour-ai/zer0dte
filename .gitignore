@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 .DS_Store
 .claude/
+
+# Local Claude guidance — contains internal architecture refs to private repos
+CLAUDE.md

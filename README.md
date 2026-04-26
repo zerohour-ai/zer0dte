@@ -1,10 +1,10 @@
 # ZER0DTE
 
-![Beta](https://img.shields.io/badge/status-beta-blue) ![MCP](https://img.shields.io/badge/protocol-MCP-green) ![Tools](https://img.shields.io/badge/tools-20-orange) ![License](https://img.shields.io/badge/data-free_tier-brightgreen)
+![Beta](https://img.shields.io/badge/status-beta-blue) ![MCP](https://img.shields.io/badge/protocol-MCP-green) ![Tools](https://img.shields.io/badge/tools-21-orange) ![License](https://img.shields.io/badge/data-free_tier-brightgreen)
 
 **Real-time options intelligence for AI agents.**
 
-20 MCP tools that give your AI assistant live 0DTE options data: dealer exposure, key levels, regime classification, expected moves, and smart-filtered chains.
+21 MCP tools that give your AI assistant live 0DTE options data: dealer exposure, key levels, regime classification, expected moves, and smart-filtered chains.
 
 No installation. No dependencies. One URL. **Free beta — 3 sessions/day, no registration.**
 
@@ -16,7 +16,7 @@ https://mcp.zer0dte.trade/sse
 
 ## How it works
 
-ZER0DTE is an [MCP server](https://modelcontextprotocol.io) — a standardized way for AI models to access real-time data. Add one URL to your AI tool's MCP configuration, and you get 19 specialized tools for 0DTE options analysis.
+ZER0DTE is an [MCP server](https://modelcontextprotocol.io) — a standardized way for AI models to access real-time data. Add one URL to your AI tool's MCP configuration, and you get 21 specialized tools for 0DTE options analysis.
 
 The data pipeline polls live options data every 60 seconds during market hours, computes dealer exposure metrics (GEX, DEX, VEX, CHEX), and serves structured results through the MCP protocol. All computation happens server-side.
 
@@ -90,7 +90,7 @@ move, VIX, and flows in one response. From there, drill into any dimension:
 - *"Quick update — where's price vs key levels?"* → `zer0dte_pulse`
 - *"What happened overnight? Futures, VIX, gap?"* → `zer0dte_overnight`
 
-All 20 tools documented below.
+All 21 tools documented below.
 
 ---
 
@@ -402,7 +402,7 @@ Pre-market context: overnight futures (ES, NQ, RTY), VIX/VIX1D/VVIX, gap analysi
 - **MCP-native from day one** — one URL. No dashboard to scrape, no SDK to integrate. Claude, Cursor, Windsurf, Claude Desktop all work out of the box.
 - **Computed, not raw** — GEX, DEX, VEX, CHEX derived server-side from Black-Scholes closed-form. The AI gets structured metrics, not re-chewed chain data.
 - **Market memory** — every regime transition and key level snapshot is stored and queryable. Ask *"what happened the last time we were in positive gamma near the put wall?"* and get historical matches with actual outcomes.
-- **Disambiguated tools** — 20 tools with explicit WHEN-TO-USE and WHEN-NOT-TO-USE descriptions so the AI picks the right one on the first try. No more "the AI called the wrong tool" failures.
+- **Disambiguated tools** — 21 tools with explicit WHEN-TO-USE and WHEN-NOT-TO-USE descriptions so the AI picks the right one on the first try. No more "the AI called the wrong tool" failures.
 - **Educational framing** — language is always statistical and educational. *"Historically, X% of sessions with this setup showed Y"* — never *"you should buy"*.
 - **Accuracy tracking** — historical record of how often computed levels actually held. Trust earned with data, not claims.
 - **Entry scoring** — research-backed 0-100 score (Option Alpha 25K trades, CAIA Papagelis 2025, Kelly-VIX framework). Not a black box.
