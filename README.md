@@ -33,19 +33,17 @@ No API key needed. Add the URL and start using it. Data is live during US market
 ### Claude Code
 
 ```bash
-claude mcp add --transport sse zer0dte https://mcp.zer0dte.trade/sse \
-  --header "Authorization: Bearer free-tier"
+claude mcp add --transport sse zer0dte https://mcp.zer0dte.trade/sse
 ```
 
-> **Free beta:** 3 sessions/day, 5/week. Limits are temporary — unlimited API keys coming soon.
+> **Free beta:** 3 sessions/day, 5/week, no auth header required. Unlimited API keys coming soon.
 
 ### Other MCP Clients (Claude Desktop, Cursor, Windsurf)
 
-Add the SSE endpoint with a Bearer token header:
+Add the SSE endpoint — no header required on the free tier:
 
 ```
 URL: https://mcp.zer0dte.trade/sse
-Header: Authorization: Bearer free-tier
 ```
 
 ### First question to ask
